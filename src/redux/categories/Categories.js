@@ -7,10 +7,7 @@ const initialState = {
 const categoriesReducer = (state = initialState, action) => {
   switch (action.type) {
     case CHECK_STATUS:
-      return {
-        ...state,
-        categories: [...state.categories, action.payload],
-      };
+      return 'Under Construction';
     default:
       return state;
   }
