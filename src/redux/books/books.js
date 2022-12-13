@@ -2,7 +2,11 @@ const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 
 const initialState = {
-  books: [],
+  books: [
+    { id: 1, title: 'The Hunger Games', author: 'Suzanne Collins' },
+    { id: 2, title: 'Divergent', author: 'Veronica Roth' },
+    { id: 3, title: 'Ender\'s Game', author: 'Orson Scott Card' },
+  ],
 };
 
 const booksReducer = (state = initialState, action) => {
