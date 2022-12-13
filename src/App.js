@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
-import Books from './redux/books/Books';
+import Books from './pages/Books';
 import ListBooks from './components/ListBooks';
-import Categories from './redux/categories/Categories';
+import Categories from './pages/Categories';
 
 function App() {
   return (
