@@ -4,12 +4,13 @@ import Book from './Book';
 
 const ListBooks = () => {
   const books = useSelector((state) => state.books.books);
+  const listBooks = books.map((book) => (
+    <Book key={book.id} id={book.id} title={book.title} author={book.author} />
+  ));
 
   return (
     <ul>
-      {books.map((book) => (
-        <Book key={book.id} id={book.id} title={book.title} author={book.author} />
-      ))}
+      {listBooks}
     </ul>
   );
 };
