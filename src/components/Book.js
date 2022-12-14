@@ -2,19 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = (props) => {
-  const { title, author } = props;
+  const { id, title, author } = props;
   return (
-    <div>
+    <li key={id}>
       <h3>{title}</h3>
       <p>{author}</p>
       <button type="button">Remove</button>
-    </div>
+    </li>
   );
 };
 
 export default Book;
 
 Book.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
 };
