@@ -7,7 +7,7 @@ const ListBooks = () => {
   const books = useSelector((state) => state.books.books);
   const dispatch = useDispatch();
   const listBooks = books.map((book) => (
-    <Book key={book.item_id} title={book.title} author={book.author} />
+    <Book key={book.item_id} item_id={book.item_id} title={book.title} author={book.author} />
   ));
 
   React.useEffect(() => {
