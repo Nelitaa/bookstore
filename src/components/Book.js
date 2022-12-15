@@ -1,18 +1,20 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { removeBookAction } from '../redux/books/books';
+import { removeBook, fetchBooks } from '../redux/books/books';
 
 const Book = (props) => {
-  const { id, title, author } = props;
+  // eslint-disable-next-line camelcase
+  const { item_id, title, author } = props;
   const dispatch = useDispatch();
 
-  const handleClick = () => {
-    dispatch(removeBookAction(id));
+  const handleClick = async () => {
+    await dispatch(removeBook(item_id));
+    await dispatch(fetchBooks());
   };
 
   return (
-    <li key={id}>
+    <li>
       <h3>{title}</h3>
       <p>{author}</p>
       <button type="button" onClick={handleClick}>Remove</button>
@@ -23,7 +25,7 @@ const Book = (props) => {
 export default Book;
 
 Book.propTypes = {
-  id: PropTypes.number.isRequired,
+  item_id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
 };
