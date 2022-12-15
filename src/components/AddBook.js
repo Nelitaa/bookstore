@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 } from 'uuid';
-import { addBookAction } from '../redux/books/books';
+import { addNewBook, fetchBooks } from '../redux/books/books';
 
 function AddBook() {
   const dispatch = useDispatch();
@@ -17,12 +17,13 @@ function AddBook() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const newBook = {
-      id: v4(),
+      item_id: v4(),
       title: state.title,
       author: state.author,
+      category: '',
     };
-    dispatch(addBookAction(newBook));
-    setState({ title: '', author: '' });
+    dispatch(addNewBook(newBook));
+    dispatch(fetchBooks());
   };
 
   return (

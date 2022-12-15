@@ -1,22 +1,47 @@
-const ADD_BOOK = 'ADD_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import BookService from '../../services/BookService';
 
 const initialState = {
-  books: [
-    { id: 1, title: 'The Hunger Games', author: 'Suzanne Collins' },
-    { id: 2, title: 'Divergent', author: 'Veronica Roth' },
-    { id: 3, title: 'Ender\'s Game', author: 'Orson Scott Card' },
-  ],
+  books: [],
 };
+
+const fetchBooks = createAsyncThunk(
+  'books/fetchBooks',
+  async () => {
+    const { data } = await BookService.getAll();
+    return Object.keys(data).map((key) => ({ ...data[key][0], item_id: key }));
+  },
+);
+
+const addNewBook = createAsyncThunk(
+  'books/addNewBook',
+  async (Book) => {
+    const response = await BookService.create(Book);
+    return response.data;
+  },
+);
+
+const removeBook = createAsyncThunk(
+  'books/removeBook',
+  async (id) => {
+    await BookService.remove(id);
+    return id;
+  },
+);
 
 const booksReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADD_BOOK:
+    case 'books/fetchBooks/fulfilled':
+      return {
+        ...state,
+        books: action.payload,
+      };
+    case addNewBook.fulfilled:
       return {
         ...state,
         books: [...state.books, action.payload],
       };
-    case REMOVE_BOOK:
+    case removeBook.fulfilled:
       return {
         ...state,
         books: state.books.filter((book) => book.id !== action.payload),
@@ -26,15 +51,5 @@ const booksReducer = (state = initialState, action) => {
   }
 };
 
-const addBookAction = (book) => ({
-  type: ADD_BOOK,
-  payload: book,
-});
-
-const removeBookAction = (id) => ({
-  type: REMOVE_BOOK,
-  payload: id,
-});
-
-export { addBookAction, removeBookAction };
+export { addNewBook, removeBook, fetchBooks };
 export default booksReducer;
