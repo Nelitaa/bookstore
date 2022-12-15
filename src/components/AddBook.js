@@ -14,7 +14,7 @@ function AddBook() {
     setState({ ...state, [event.target.name]: event.target.value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const newBook = {
       item_id: v4(),
@@ -22,16 +22,17 @@ function AddBook() {
       author: state.author,
       category: '',
     };
-    dispatch(addNewBook(newBook));
-    dispatch(fetchBooks());
+    await dispatch(addNewBook(newBook));
+    await dispatch(fetchBooks());
+    setState({ title: '', author: '' });
   };
 
   return (
     <div>
       <h2>ADD NEW BOOK</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Book title" name="title" onChange={handleChange} />
-        <input type="text" placeholder="Book author" name="author" onChange={handleChange} />
+        <input type="text" placeholder="Book title" value={state.title} name="title" onChange={handleChange} />
+        <input type="text" placeholder="Book author" value={state.author} name="author" onChange={handleChange} />
         <button type="submit">ADD BOOK</button>
       </form>
     </div>

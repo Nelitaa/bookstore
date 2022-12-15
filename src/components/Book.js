@@ -8,9 +8,9 @@ const Book = (props) => {
   const { item_id, title, author } = props;
   const dispatch = useDispatch();
 
-  const handleClick = () => {
-    dispatch(removeBook(item_id));
-    dispatch(fetchBooks());
+  const handleClick = async () => {
+    await dispatch(removeBook(item_id));
+    await dispatch(fetchBooks());
   };
 
   return (
