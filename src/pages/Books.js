@@ -2,11 +2,11 @@ import AddBook from '../components/AddBook';
 import ListBooks from '../components/ListBooks';
 
 const Books = () => (
-  <section>
+  <div className="container p-5">
     <ListBooks />
     <hr />
     <AddBook />
-  </section>
+  </div>
 );
 
 export default Books;

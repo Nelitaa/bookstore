@@ -15,9 +15,11 @@ const ListBooks = () => {
   }, [dispatch]);
 
   return (
-    <ul className="list-unstyled">
-      {listBooks}
-    </ul>
+    <section>
+      <ul className="list-unstyled">
+        {listBooks}
+      </ul>
+    </section>
   );
 };
 

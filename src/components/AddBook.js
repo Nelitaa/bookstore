@@ -28,14 +28,14 @@ function AddBook() {
   };
 
   return (
-    <div className="container">
-      <h2 className="text-uppercase text-secondary">Add new book</h2>
-      <form className="row" onSubmit={handleSubmit}>
+    <section>
+      <h1 className="text-uppercase text-secondary h4 py-3">Add new book</h1>
+      <form className="row gap-5" onSubmit={handleSubmit}>
         <input type="text" className="form-control col" placeholder="Book title" value={state.title} name="title" onChange={handleChange} />
         <input type="text" className="form-control col" placeholder="Book author" value={state.author} name="author" onChange={handleChange} />
         <button type="submit" className="btn text-uppercase btn-primary col-1">Add book</button>
       </form>
-    </div>
+    </section>
   );
 }
 
