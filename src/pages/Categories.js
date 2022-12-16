@@ -10,9 +10,9 @@ function Categories() {
   };
 
   return (
-    <div>
-      <h2>Categories</h2>
-      <button type="button" onClick={handleClick}>Check status</button>
+    <div className="container-fluid p-5">
+      <h1 className="text-secondary">Categories</h1>
+      <button type="button" className="btn-blue text-uppercase m-3" onClick={handleClick}>Check status</button>
     </div>
   );
 }

@@ -15,9 +15,11 @@ const ListBooks = () => {
   }, [dispatch]);
 
   return (
-    <ul>
-      {listBooks}
-    </ul>
+    <section className="container-fluid p-5">
+      <ul className="row gap-3">
+        {listBooks}
+      </ul>
+    </section>
   );
 };
 
