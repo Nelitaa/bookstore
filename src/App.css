@@ -5,7 +5,7 @@
   margin: 4%;
   box-shadow: 0 0 60px 0 rgb(0 0 0 / 5%);
   background-color: #f8f0f0b1;
-  font-family: "Montserrat",sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .nav-style {
@@ -39,16 +39,16 @@
 
 .text-category {
   font-weight: 700;
-  font-size: .875rem;
-  opacity: .5;
+  font-size: 0.875rem;
+  opacity: 0.5;
 }
 
 .text-roboto {
-  font-family: "Roboto Slab",serif;
+  font-family: "Roboto Slab", serif;
 }
 
 .text-author {
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 300;
   color: #4386bf;
 }
@@ -83,5 +83,5 @@
 }
 
 .text-chapter {
-  opacity: .5;
+  opacity: 0.5;
 }
