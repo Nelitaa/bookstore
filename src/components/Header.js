@@ -3,15 +3,13 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <header className="container bg-white px-5">
-      <nav className="navbar">
-        <div className="navbar">
-          <Link to="/" className="navbar-brand text-primary">Bookstore CMS</Link>
-          <ul className="nav">
-            <li className="nav-item small"><Link to="/books" className="nav-link text-uppercase navbar-text">books</Link></li>
-            <li className="nav-item small"><Link to="/categories" className="nav-link text-uppercase navbar-text">categories</Link></li>
-          </ul>
-        </div>
+    <header>
+      <nav className="navbar bg-white py-4 px-5 nav-style">
+        <Link to="/" className="nav-brand">Bookstore CMS</Link>
+        <ul className="nav nav-titles">
+          <li><Link to="/books" className="nav-link text-uppercase navbar-text">books</Link></li>
+          <li><Link to="/categories" className="nav-link text-uppercase navbar-text">categories</Link></li>
+        </ul>
         <button type="button" className="btn rounded-pill border"><img src="/user-3-fill.png" alt="Avatar Logo" width={20} /></button>
       </nav>
     </header>

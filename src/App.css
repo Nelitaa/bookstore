@@ -1,13 +1,87 @@
-.background-main {
-  background-color: #f1f3f4;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+
+#root {
+  margin: 4%;
+  box-shadow: 0 0 60px 0 rgb(0 0 0 / 5%);
+  background-color: #f8f0f0b1;
+  font-family: "Montserrat",sans-serif;
 }
 
-.text-especial {
+.nav-style {
+  border-bottom: 1px solid #e8e8e8;
+  box-shadow: 0 0 60px 0 rgb(0 0 0 / 5%);
+  border-radius: 4px 4px 0 0;
+}
+
+.nav-brand {
+  text-decoration: none;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0290ff;
+}
+
+.nav-titles {
+  margin-left: 2%;
+  flex-grow: 1;
+}
+
+.btn-blue {
+  background-color: #0290ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.text-category {
+  font-weight: 700;
+  font-size: .875rem;
+  opacity: .5;
+}
+
+.text-roboto {
+  font-family: "Roboto Slab",serif;
+}
+
+.text-author {
+  font-size: .875rem;
+  font-weight: 300;
   color: #4386bf;
 }
 
-.btn-especial {
-  background-color: #fff;
+.btn-white {
+  background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.vertical-line {
+  width: 0.125rem;
+  height: 1.5rem;
+  background-color: #e8e8e8;
+  margin: 0 1rem;
+}
+
+.circular-progress {
+  border-radius: 50%;
+  width: 4.25rem;
+  height: 4.25rem;
+  border: 8px solid #307bbe;
+  border-left-color: #e8e8e8;
+  transform: rotate(45deg);
+}
+
+.progress-divider {
+  width: 0.125rem;
+  height: 4.375rem;
+  margin: 0 3.688rem 0 4.938rem;
+  background-color: #e8e8e8;
+}
+
+.text-chapter {
+  opacity: .5;
 }

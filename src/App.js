@@ -8,14 +8,12 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <div className="flex row p-5 bg-light">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Books />} />
-          <Route path="/books" element={<ListBooks />} />
-          <Route path="/categories" element={<Categories />} />
-        </Routes>
-      </div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Books />} />
+        <Route path="/books" element={<ListBooks />} />
+        <Route path="/categories" element={<Categories />} />
+      </Routes>
     </Router>
   );
 }
