@@ -7,12 +7,14 @@ import Categories from './pages/Categories';
 function App() {
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Books />} />
-        <Route path="/books" element={<ListBooks />} />
-        <Route path="/categories" element={<Categories />} />
-      </Routes>
+      <div className="container pt-5 bg-light">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Books />} />
+          <Route path="/books" element={<ListBooks />} />
+          <Route path="/categories" element={<Categories />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

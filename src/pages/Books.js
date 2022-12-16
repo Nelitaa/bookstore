@@ -4,6 +4,7 @@ import ListBooks from '../components/ListBooks';
 const Books = () => (
   <section>
     <ListBooks />
+    <hr />
     <AddBook />
   </section>
 );
