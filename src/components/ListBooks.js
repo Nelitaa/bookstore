@@ -15,8 +15,8 @@ const ListBooks = () => {
   }, [dispatch]);
 
   return (
-    <section>
-      <ul className="list-unstyled">
+    <section className="py-3">
+      <ul className="row gap-3 list-unstyled">
         {listBooks}
       </ul>
     </section>

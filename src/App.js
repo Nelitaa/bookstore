@@ -3,11 +3,12 @@ import Header from './components/Header';
 import Books from './pages/Books';
 import ListBooks from './components/ListBooks';
 import Categories from './pages/Categories';
+import './App.css';
 
 function App() {
   return (
     <Router>
-      <div className="container pt-5 bg-light">
+      <div className="flex row p-5 bg-light">
         <Header />
         <Routes>
           <Route path="/" element={<Books />} />

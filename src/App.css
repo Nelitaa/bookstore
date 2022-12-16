@@ -1,4 +1,13 @@
-* {
-  padding: 0;
-  margin: 0;
+.background-main {
+  background-color: #f1f3f4;
+}
+
+.text-especial {
+  color: #4386bf;
+}
+
+.btn-especial {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
 }
